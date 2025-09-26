@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var engine = require('ejs-blocks');
 var app = express();
+var productRouter = require('./routes/products');
+app.use('/products', productRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //serving bootstrap
-app.use('bootstrap', express.static(path.join(__dirname + '/node_modules/bootstrap/dist/')));
+app.use(
+  "/bootstrap",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
