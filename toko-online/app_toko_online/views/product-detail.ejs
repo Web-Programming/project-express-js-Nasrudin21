@@ -1,0 +1,12 @@
+<%layout('layout')%>
+
+<div class="container mt-5">
+    <div class="card-4">
+        <h1 class="card-title"><%= products.name %></h1>
+        <hr>
+        <p 
+        class="card-text"><strong>Deskripsi : </strong> <%= products.description %></p>
+        <p class="card-text"><strong> Harga </strong> Rp <%= products.price.toLocaleString('id-ID') %></p>
+        <a href="/" class="btn btn-secondary mt-3">Kembali ke Beranda</a>
+    </div>
+  </div>

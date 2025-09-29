@@ -4,15 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./app_toko_online/routes/index');
+var usersRouter = require('./app_toko_online/routes/users');
 var engine = require('ejs-blocks');
 var app = express();
-var productRouter = require('./routes/products');
+var productRouter = require('./app_toko_online/routes/products');
 app.use('/products', productRouter);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname,'app_toko_online' ,'views')); //perbaikan 1
 app.engine('ejs',engine);
 app.set('view engine', 'ejs');
 
