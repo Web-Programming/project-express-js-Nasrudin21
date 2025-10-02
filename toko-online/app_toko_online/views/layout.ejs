@@ -6,6 +6,7 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <!-- Navbar dapat diambil dari getbootstrap -->
@@ -33,15 +34,16 @@
             </li>
           </ul>
           <!-- Form pencarian -->
-           <form class="d-flex" action="/search" method="GET">
-            <input 
-            class="form-control me-2" 
-            type="search" 
-            name="q" 
-            placeholder="Cari produk..." 
-            value="<%= typeof query !== 'undefined' ? query : '' %>"
+<form class="d-flex" action="/search" method="GET">
+  <input 
+    class="form-control me-2" 
+    type="search" 
+    name="q" 
+    placeholder="Cari produk..." 
+    value="<%= typeof query !== 'undefined' ? query : '' %>">
+  <button class="btn btn-outline-success" type="submit">Cari</button>
+</form>
 
-            <button class="btn btn-outline-success" type="submit">Cari</button>
         </form>
         </div>
       </div>
