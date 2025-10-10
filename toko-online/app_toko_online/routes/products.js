@@ -1,12 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var productsController = require('../controllers/products');
+const express = require("express");
+const router = express.Router();
+var productController = require("../controllers/product");
 
-router.get("/api/all", productsController.apiall);
-// Route untuk menampilkan semua produk
-router.get('/all', productsController.index);
-
-// Route untuk menampilkan detail produk berdasarkan ID
-router.get('/:id', productsController.detail);
+router.get("/apiall", productController.apiall);
+router.get("/all", productController.index);
+router.get("/:id", productController.detail);
 
 module.exports = router;

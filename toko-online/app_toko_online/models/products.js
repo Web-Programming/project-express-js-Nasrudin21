@@ -23,7 +23,7 @@ const ProductSchema = mongoose.Schema({
         type : Number,
         default : 0,//memberikan nilai bawaan/default
     },
-    createAT: {
+    createAt: {
         type : Date,
         default : Date.now,//memberikan nilai bawaan/default
     }
