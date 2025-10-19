@@ -17,7 +17,7 @@ router.post("/", requireJson, productController.create);
 //url read all - GET (/api/produk)
 router.get("/", requireJson, productController.all); //done
 //url read one - detail - GET (/api/produk/:id)
-router.get("/:id", productController.detailproduk);
+router.get("/:id", productController.detailproduct);
 //url update - PUT (/api/produk/:id)
 router.put("/:id", productController.update);
 //url delete - DELETE (/api/produk/:id)
