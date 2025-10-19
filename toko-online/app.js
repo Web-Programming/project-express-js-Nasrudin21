@@ -10,6 +10,8 @@ var indexRouter = require('./app_toko_online/routes/index');
 var usersRouter = require('./app_toko_online/routes/users');
 var productRouter = require('./app_toko_online/routes/products');
 var apiProductRouter = require('./app_toko_online/routes/api/product');
+var apiUserRouter = require("./app_toko_online/routes/api/user"); //import route api
+var apiOrderRouter = require("./app_toko_online/routes/api/order"); //import route api order
 var engine = require('ejs-blocks');
 var app = express();
 
@@ -36,6 +38,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
 app.use('/api/products', apiProductRouter);
+app.use("/api/user", apiUserRouter); //daftarkan route api
+app.use("/api/orders", apiOrderRouter); //daftarkan route api order
 
 
 // catch 404 and forward to error handler
