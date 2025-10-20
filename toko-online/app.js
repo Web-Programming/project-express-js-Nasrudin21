@@ -37,9 +37,9 @@ app.use(
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productRouter);
-app.use('/api/products', apiProductRouter);
+app.use('/api/product', apiProductRouter);
 app.use("/api/user", apiUserRouter); //daftarkan route api
-app.use("/api/orders", apiOrderRouter); //daftarkan route api order
+app.use("/api/order", apiOrderRouter); //daftarkan route api order
 
 
 // catch 404 and forward to error handler
@@ -57,9 +57,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
-});
+
 
 module.exports = app;
