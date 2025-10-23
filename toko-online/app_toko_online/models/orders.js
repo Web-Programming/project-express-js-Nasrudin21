@@ -5,9 +5,11 @@ const orderSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    items : [{
-        productName: {
-            type: String,
+    orderItems : [
+        {
+        product: {
+            type: mongoose.Schema.Types.String,
+            ref: 'Product',
             required: true
         },
         quantity: {
@@ -15,21 +17,20 @@ const orderSchema = new mongoose.Schema({
             required: true,
             Min: 1
         },
-        price: {
+        priceAtOrder: {
             type: Number,
-            required: true,
-            Min: 0
+            required: true
         },
-    }],
+    },
+],
     totalAmount: { 
         type: Number,
-        required:
-        true, min: 0 
+        required: true
     },
     status: { 
         type: String, 
+        default: 'Tertunda',
         enum: ['Tertunda', 'Proses', 'Selesai', 'Dibatalkan'], 
-        default: 'Tertunda' 
     },
     orderDate: { 
         type: Date, 
